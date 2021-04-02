@@ -248,7 +248,7 @@ this.setState({[state]:value})
         <div>
 
          
-    <nav class="navbar navbar-expand-xs bg-dark navbar-dark p-3 fixed-top">
+    <nav class="navbar navbar-expand-xs bg-dark navbar-dark p-3">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
