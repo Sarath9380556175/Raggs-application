@@ -10,3 +10,16 @@
 		 margin-left:100px
 	 }
  }
+@media only screen and (min-width:100px) and (max-width:500px)
+ {
+	 .skr{
+		 margin-left:100px
+	 }
+ }
+
+ @media only screen and (min-width:100px) and (max-width:400px)
+ {
+	 .skr{
+		 margin-left:20px
+	 }
+ }
