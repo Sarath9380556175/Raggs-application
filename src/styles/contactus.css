@@ -1,0 +1,13 @@
+.forms{
+    display: inline-block;
+    padding: 6px 6px 6px 6px;
+    border:4px solid black;
+}
+#kkr{
+    display: inline-block;
+margin-bottom: 11px;
+background-color: white;
+border-radius: 50%;
+width: 90px;
+height: 28px;
+}

@@ -1,0 +1,114 @@
+
+.logo{
+    background: chartreuse;
+    border-radius: 50%;
+    display: inline-block;
+    width: 147px;
+    height: 98px;
+    padding-top: 10px;
+ }
+ .skrs{
+ 	font-style: italic;
+    font-family: serif;
+    font-size: 25px;
+ }
+ .one{
+ 	margin-top: 10px;
+ 	margin-right: 10px;
+ 	display: inline-block;
+ 	width:300px;
+ 	height: 150px;
+ 	box-shadow: 3px 6px 3px 3px grey;
+ }
+ .two{
+ 	color: #8c96ab;
+ 	font-family:serif;
+ 	font-style: italic;
+
+ }
+ .burger{
+ 	font-weight: bold;
+ 	color: darkslateblue;
+ 	font-family: sans-serif;
+ 	font-style: italic;
+ }
+ @media only screen and (min-width: 200px) and (max-width: 600px)
+ {
+ 	.one{
+ 		margin-bottom: 20px;
+ 	}
+ }
+ .quick{
+ 	font-family: poppins;
+ 	font-size: 20px;
+ 	color: darkslateblue;
+ 	font-weight:bold;
+ }
+ .dropdown{
+ 	font-style: italic;
+    border: 3px solid grey;
+opacity: 1.6;
+    width: 214px;
+    border-radius: -3px;
+    border-radius: 2px;
+    border-radius: 7px;
+ margin-left: 10px;
+ }
+
+ .dropdowns{
+	font-style: italic;
+   border: 3px solid grey;
+opacity: 1.6;
+   width: 214px;
+   border-radius: -3px;
+   border-radius: 2px;
+   border-radius: 7px;
+margin-left: 10px;
+}
+
+
+ .search{
+ 	font-style: italic;
+    border: 3px solid grey;
+opacity: 1.6;
+    width: 257px;
+    border-radius: 8px;
+    height: 30px;
+ }
+  @media only screen and (min-width: 500px) and (max-width: 600px)
+ {
+ 	.dropdowns{
+ 		margin-top: 20px;
+ 	}
+ }
+ @media only screen and (min-width: 800px) and (max-width: 850px)
+ {
+ 	.search{
+ 		margin-top: 20px;
+ 	}
+ }
+ @media only screen and (max-width: 810px)
+ {
+ 	.search{
+ 		margin-top: 20px;
+ 	}
+ }
+ 
+ 	.search{
+ 		margin-top: 20px;
+ 	}
+ 
+ .footer{
+ 	font-style: italic;
+    font-weight: 900;
+    font-size: 34px;
+    font-family: serif;
+ }
+ @media only screen and (min-width:100px) and (max-width:1000px)
+ {
+	 .one{
+		 margin-left:80px
+	 }
+ }
+
+ 
