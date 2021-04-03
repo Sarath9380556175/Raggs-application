@@ -259,7 +259,7 @@ this.setState({[state]:value})
   {
     IsGoogleuserLoggedIn===true && IsuserLoggedIn===false?
         <div style={{float:'right',verticalAlign:'top'}}>
-        <span className="text-primary mr-3"><img src={`${googleimage}`} className="rounded-circle" width="40px" height="40px" alt="Nothing Found"/>&nbsp;&nbsp;{`Welcome ${googleusername}`}</span>
+        <span className="text-primary mr-3"><img src={`${googleimage}`} className="rounded-circle" width="40px" height="40px" alt="Nothing Found"/>&nbsp;&nbsp;{`${googleusername}`}</span>
         <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handlegooglelogout('IsGoogleuserLoggedIn',false)}>Logout</span>
       
       
