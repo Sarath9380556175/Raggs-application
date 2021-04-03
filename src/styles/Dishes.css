@@ -3,5 +3,18 @@
       width: 700px;
       height: 200px;
     }
+@media only screen and (min-width:100px) and (max-width:500px)
+ {
+	 .skr{
+		 margin-left:25px
+	 }
+ }
 
+ @media only screen and (min-width:100px) and (max-width:480px)
+ {
+	 .skr{
+		 margin-left:20px
+	 }
+ }
+ 
    
