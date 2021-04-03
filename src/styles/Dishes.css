@@ -6,14 +6,14 @@
 @media only screen and (min-width:100px) and (max-width:500px)
  {
 	 .skr{
-		 margin-left:25px
+		 margin-left:30px
 	 }
  }
 
  @media only screen and (min-width:100px) and (max-width:480px)
  {
 	 .skr{
-		 margin-left:25px
+		 margin-left:30px
 	 }
  }
  @media only screen and  (max-width:1400px)
@@ -26,7 +26,7 @@
  @media only screen and  (min-width:200px)   and  (max-width:400px)
  {
 	 .skr{
-		 margin-left:22px;
+		 margin-left:30px;
 	 }
  }
 
