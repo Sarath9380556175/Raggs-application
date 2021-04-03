@@ -23,5 +23,13 @@
 	 }
  }
 
+ @media only screen and  (min-width:200px)   and  (max-width:400px)
+ {
+	 .skr{
+		 margin-left:20px;
+	 }
+ }
+
+
 
    
