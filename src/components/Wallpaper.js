@@ -198,7 +198,9 @@ this.setState({[name]:value})
 
        responseGoogle=(response)=>{
          console.log(response)
-         this.setState({googleusername:response.profileObj.name, IsGoogleuserLoggedIn:true,islogin:false,googleimage:response.profileObj.imageUrl})
+           sessionStorage.setItem('gimage',response.profileObj.imageUrl)
+         const img=sessionStorage.getItem('gimage')
+         this.setState({googleusername:response.profileObj.name, IsGoogleuserLoggedIn:true,islogin:false,googleimage:img})
        }
 
 
@@ -352,7 +354,7 @@ this.setState({[state]:value})
 <div className="container-fluid jumbotron text-center" style={{background:"url(Assets/restaurantlogo.jpg)"}}>
 
   <div className="logo">
-  <p className="skrs">SKR <i className="fas fa-coffee bg-warning rounded" id="top"></i> <b>R</b>estaurant</p>
+  <p className="skrs">{googleimage?<img src={`${googleimage}`} className="rounded-circle" width="147px" height="110px" style={{borderRadius:'50%',marginTop:'-13px'}} alt="Nothing Found"/>: <div>SKR <i className="fas fa-coffee bg-warning rounded" id="top"></i> <b>R</b>estaurant</div>}</p>
 </div>
 <br/><br/>
 <div className="btn-group">
