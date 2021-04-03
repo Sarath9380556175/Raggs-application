@@ -16,5 +16,12 @@
 		 margin-left:20px
 	 }
  }
- 
+ @media only screen and  (max-width:1400px)
+ {
+	 .skr{
+		 margin-left:200px;
+	 }
+ }
+
+
    
