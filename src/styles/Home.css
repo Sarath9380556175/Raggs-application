@@ -111,7 +111,7 @@ opacity: 1.6;
 	 }
  }
 
-@media only screen and (min-width:100px) and (max-width:500px)
+@media only screen and (min-width:100px) and (max-width:480px)
  {
 	 .one{
 		margin-left: 40px;
