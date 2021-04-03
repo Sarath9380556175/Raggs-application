@@ -4,43 +4,4 @@
       height: 200px;
     }
 
-    @media only screen and (min-width:100px) and (max-width:1000px)
- {
-	 .skr{
-		 margin-left:100px
-	 }
- }
-@media only screen and (min-width:100px) and (max-width:500px)
- {
-	 .skr{
-		 margin-left:100px
-	 }
- }
-
- @media only screen and (min-width:100px) and (max-width:400px)
- {
-	 .skr{
-		 margin-left:30px
-	 }
- }
-
- @media only screen and (min-width:100px) and (max-width:480px)
- {
-	 .skr{
-		 margin-left:20px
-	 }
- }
-
- @media only screen and (min-width:100px) and (max-width:480px)
- {
-	 .skr{
-		 margin-left:17px
-	 }
- }
-
-@media only screen and (min-width:100px) and (max-width:490px)
- {
-	 .skr{
-		 margin-left:17px
-	 }
- }
+   
