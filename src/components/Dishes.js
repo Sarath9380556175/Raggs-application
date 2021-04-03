@@ -45,7 +45,7 @@ itempage=(itemid,itemprice)=>{
         return(
             
             <div>
-                <div className="container ">
+                <div className="container-fluid ">
                 {restaurants.length!==0?
                     
                     restaurants.map((item)=>{
