@@ -51,7 +51,7 @@ itempage=(itemid,itemprice)=>{
                     restaurants.map((item)=>{
                         return  <div style={{display:'inline-block'}}  className="skr"  onClick={()=>this.itempage(item._id, item.min_price)}>
                             
-               <img src={`../${item.image}`} width="300px" height="300px" className=" rounded" style={{marginRight:'70px'}} alt="Nothing Found"/>
+               <img src={`../${item.image}`} width="300px" height="300px" className=" rounded" style={{marginRight:'60px'}} alt="Nothing Found"/>
                <div className="mt-3">
                    <div style={{marginRight:'3px',padding:'3px 20px 3px 20px',display:'inline'}} className="btn-outline-success">{item.name}</div>
                    <div style={{marginRight:'3px',padding:'3px 20px 3px 20px'}} >&#8377;&nbsp;{item.min_price} per person</div>
