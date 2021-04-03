@@ -70,18 +70,18 @@ class Rateus extends React.Component{
     Excellent
   </div>
 
-  <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+  <div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="b" onChange={()=>this.handlequality('Good')} required/>&nbsp;
     Good
    </div>
 
-    <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+    <div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="a" onChange={()=>this.handlequality('Average')} required/>&nbsp;
     Average
  </div>
 
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 <input type="radio" name="audio" onChange={()=>this.handlequality('Bad')} required/>&nbsp;
    Bad
 
@@ -93,17 +93,17 @@ class Rateus extends React.Component{
    Excellent
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Good')} required/>&nbsp;
    Good
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Average')} required/>&nbsp;
    Average
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Bad')} required/>&nbsp;
     Bad
 </div>
