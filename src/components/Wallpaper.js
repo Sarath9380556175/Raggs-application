@@ -460,7 +460,7 @@ style={customStyles}
        <button className="btn btn-primary">Submit</button>
           
               </form>
-              <span>Already have an account<div onClick={()=>this.handleclick('isuserwanttologin',true)} style={{textDecoration:'none',color:'green'}}>&nbsp;SignIn</div></span>
+              <span>Already have an account<span onClick={()=>this.handleclick('isuserwanttologin',true)} style={{textDecoration:'none',color:'green'}}>&nbsp;SignIn</span></span>
               </div>
 
 </Modal>
@@ -485,7 +485,7 @@ style={customStyles}
  <i className="fas fa-female"></i>&nbsp;<input type="radio" name="gender" onChange={()=>this.handlegender('others')} required/>&nbsp;Others<br/><br/>
   <button className="btn btn-primary">submit</button>
 </form>
-<span>Dont have an account<div onClick={()=>this.handleaccount('iscreatingaccount',true)} style={{textDecoration:'none',color:'red'}}>&nbsp;Signup</div></span>
+<span>Dont have an account<span onClick={()=>this.handleaccount('iscreatingaccount',true)} style={{textDecoration:'none',color:'red'}}>&nbsp;Signup</span></span>
 </div>
 </Modal>
 
