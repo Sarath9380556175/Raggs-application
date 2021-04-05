@@ -64,46 +64,46 @@ class Rateus extends React.Component{
 </div>
                  <form  onSubmit={this.handleSubmit}>
                      <br/>
-    <div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic',fontFamily:'cursive'}}>1. please rate the quality of Food<br/><br/>
+    <div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic'}}>1. please rate the quality of Food<br/><br/>
     
 	<input type="radio" name="audio" onChange={()=>this.handlequality('Excellent')} required/>&nbsp;
     Excellent
   </div>
 
-  <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+  <div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="b" onChange={()=>this.handlequality('Good')} required/>&nbsp;
     Good
    </div>
 
-    <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+    <div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="a" onChange={()=>this.handlequality('Average')} required/>&nbsp;
     Average
  </div>
 
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 <input type="radio" name="audio" onChange={()=>this.handlequality('Bad')} required/>&nbsp;
    Bad
 
 </div>
 <br/>
 
-<div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic',fontFamily:'cursive'}}>2. please rate the quality of Restaurant<br/><br/>
+<div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic'}}>2. please rate the quality of Restaurant<br/><br/>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Excellent')} required/>&nbsp;
    Excellent
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Good')} required/>&nbsp;
    Good
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Average')} required/>&nbsp;
    Average
 </div>
 
-<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Bad')} required/>&nbsp;
     Bad
 </div>
