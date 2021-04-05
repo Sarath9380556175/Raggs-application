@@ -19,7 +19,7 @@ componentDidMount()
   const mealtype=qs.restaurant;
   
     axios({
-        url:'https://dry-citadel-95113.herokuapp.com/restaurantsfilter',
+        url:'https://vast-plateau-26931.herokuapp.com/restaurantsfilter',
         method:'POST',
         headers:{'content-Type':'application/json'},
         data:
