@@ -5,6 +5,8 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import queryString from 'query-string';
+import { get } from 'mongoose';
 const customStyles = {
   content : {
     top                   : '50%',
@@ -64,6 +66,7 @@ class Wallpaper extends React.Component{
       
     }
   }
+
   componentDidMount()
   {
     sessionStorage.clear();
@@ -75,7 +78,6 @@ class Wallpaper extends React.Component{
     .catch(error=>console.log(error))
    
   }
-  
     Aboutus=()=>{
         this.props.history.push('/aboutus');
     }
@@ -116,7 +118,12 @@ this.setState({[name]:value})
 
 
        handlegender=(gender)=>{
-         const {email,password}=this.state;
+         const {email,password,mails,getsignupdetails}=this.state;
+         console.log(mails)
+        const skr= getsignupdetails.map((item)=>item.email)
+        console.log(skr)
+         const mailing=queryString.parse(mails)
+         console.log(mailing)
          axios({
     url:'https://vast-plateau-26931.herokuapp.com/login',
     method:'POST',
@@ -128,7 +135,7 @@ this.setState({[name]:value})
       gender:gender
     }
          })
-         .then(res=>this.setState({logindetails:res.data.login,gender:gender,IsuserLoggedIn:res.data.isLoggedin,islogin:false,skr:res.data.isLoggedin===false?alert('Invalid details'):alert('UserLoggedIn Successfully'),isuserwanttologin:false}))
+         .then(res=>this.setState({logindetails:res.data.login,gender:gender,IsuserLoggedIn:res.data.isLoggedin,islogin:false,skr:res.data.isLoggedin==false?alert('Invalid details'):alert('UserLoggedIn Successfully'),isuserwanttologin:false}))
 
          .catch()
        }
@@ -144,12 +151,15 @@ this.setState({[name]:value})
 
        handlename=(event)=>{
          const name=event.target.name;
+         console.log(name)
          const value=event.target.value;
+         console.log(value)
          this.setState({[name]:value})
        }
 
        handleemails=(event)=>
        {
+         
         const name=event.target.name;
         console.log(name);
         const value=event.target.value;
@@ -159,6 +169,7 @@ this.setState({[name]:value})
 
        handlepasswords=(event)=>
        {
+         
         const name=event.target.name;
         console.log(name);
         const value=event.target.value;
@@ -175,11 +186,12 @@ this.setState({[name]:value})
        }
 
        handlegenders=(gender)=>{
+         console.log(gender)
          this.setState({genders:gender})
       
        }
 
-        handlesubmit=()=>{
+       handlesubmit=()=>{
 
 
 
@@ -213,18 +225,13 @@ this.setState({[name]:value})
        }
 
 
-
-
        userlogin=(state,value)=>{
          this.setState({[state]:value,islogin:false})
 
        }
 
        responseGoogle=(response)=>{
-         console.log(response)
-           sessionStorage.setItem('gimage',response.profileObj.imageUrl)
-         const img=sessionStorage.getItem('gimage')
-         this.setState({googleusername:response.profileObj.name, IsGoogleuserLoggedIn:true,islogin:false,googleimage:img})
+         this.setState({googleusername:response.profileObj.name,IsGoogleuserLoggedIn:true,islogin:false,googleimage:response.profileObj.imageUrl})
        }
 
 
@@ -274,16 +281,16 @@ this.setState({[state]:value})
         <div>
 
          
-    <nav class="navbar navbar-expand-xs bg-dark navbar-dark p-3">
+    <nav class="navbar navbar-expand-xs bg-dark navbar-dark p-3 fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
   {
-    IsGoogleuserLoggedIn===true && IsuserLoggedIn===false?
+    IsGoogleuserLoggedIn==true && IsuserLoggedIn==false?
         <div style={{float:'right',verticalAlign:'top'}}>
-        <span className="text-primary mr-3"><img src={`${googleimage}`} className="rounded-circle" width="40px" height="40px" alt="Nothing Found"/>&nbsp;&nbsp;{`${googleusername}`}</span>
+        <span className="text-primary mr-3"><img src={`${googleimage}`} className="rounded-circle" width="40px" height="40px"/>&nbsp;&nbsp;{`Welcome ${googleusername}`}</span>
         <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handlegooglelogout('IsGoogleuserLoggedIn',false)}>Logout</span>
       
       
@@ -292,7 +299,7 @@ this.setState({[state]:value})
     
     :
 
-    IsuserLoggedIn===true && IsGoogleuserLoggedIn===false?logindetails.map((item)=>{
+    IsuserLoggedIn==true && IsGoogleuserLoggedIn==false?logindetails.map((item)=>{
       return  <div style={{float:'right',verticalAlign:'top'}}>
       <span className="text-primary mr-3" onClick={()=>this.handleclick('islogin',true)}>{`Welcome ${item.name}`}</span>
       <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handlelogout('IsuserLoggedIn',false)}>Logout</span>
@@ -303,9 +310,9 @@ this.setState({[state]:value})
     })
 
 
-    :isfacebookuserloggedIn===true && IsuserLoggedIn===false?
+    :isfacebookuserloggedIn==true && IsuserLoggedIn==false?
     <div style={{float:'right',verticalAlign:'top'}}>
-    <span className="text-primary mr-3"><img src={`${image}`} className="rounded-circle"  width="40px" height="40px" alt="Nothing Found"/>&nbsp;&nbsp;{`Welcome ${facebookusername}`}</span>
+    <span className="text-primary mr-3"><img src={`${image}`} className="rounded-circle"  width="40px" height="40px"/>&nbsp;&nbsp;{`Welcome ${facebookusername}`}</span>
     <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handlefacebooklogout('isfacebookuserloggedIn',false)}>Logout</span>
   
   
@@ -316,7 +323,7 @@ this.setState({[state]:value})
   
   
   
-  : IsGoogleuserLoggedIn===false? <div style={{float:'right',verticalAlign:'top'}}>
+  : IsGoogleuserLoggedIn==false? <div style={{float:'right',verticalAlign:'top'}}>
     <span className="text-primary mr-3" onClick={()=>this.handleclick('islogin',true)}>Login</span>
     <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handleaccount('iscreatingaccount',true)}>Createanaccount</span>
   
@@ -327,7 +334,7 @@ this.setState({[state]:value})
     
 
   :
-  IsuserLoggedIn===false?<div style={{float:'right',verticalAlign:'top'}}>
+  IsuserLoggedIn==false?<div style={{float:'right',verticalAlign:'top'}}>
       <span className="text-primary mr-3" onClick={()=>this.handleclick('islogin',true)}>Login</span>
       <span className="text-primary" style={{border:'4px double red',padding:'4px 4px 4px 4px'}} onClick={()=>this.handleaccount('iscreatingaccount',true)}>Createanaccount</span>
     
@@ -336,6 +343,22 @@ this.setState({[state]:value})
       </div>
   
   :null}
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -362,7 +385,7 @@ this.setState({[state]:value})
 <div className="container-fluid jumbotron text-center" style={{background:"url(Assets/restaurantlogo.jpg)"}}>
 
   <div className="logo">
-  <p className="skrs">{googleimage?<img src={`${googleimage}`} className="rounded-circle" width="160px" height="115px" style={{borderRadius:'50%',marginTop:'-21px',marginLeft: '-11px'}} alt="Nothing Found"/>: <div>SKR <i className="fas fa-coffee bg-warning rounded" id="top"></i> <b>R</b>estaurant</div>}</p>
+  <p className="skrs">SKR <i className="fas fa-coffee bg-warning rounded" id="top"></i> <b>R</b>estaurant</p>
 </div>
 <br/><br/>
 <div className="btn-group">
@@ -373,6 +396,7 @@ this.setState({[state]:value})
   <a href="https://www.youtube.com" className="dropdown-item bg-dark text-white">complaints</a>
 
   </div>
+  <button className="btn btn-primary" data-toggle="popover" title="SKR Restaurant" data-content="we have Variety of dishes" data-trigger="focus" onClick={this.Dishes}>Dishes</button>
   <button className="btn btn-primary" onClick={this.Aboutus}>About Us</button>
   <button className="btn btn-primary" onClick={this.Contactus}>Contact Us</button>
 </div>
@@ -468,7 +492,7 @@ style={customStyles}
        <button className="btn btn-primary">Submit</button>
           
               </form>
-              <span>Already have an account<span onClick={()=>this.handleclick('isuserwanttologin',true)} style={{textDecoration:'none',color:'green'}}>&nbsp;SignIn</span></span>
+              <div>Already have an account<a href="#"  onClick={()=>this.handleclick('isuserwanttologin',true)} style={{textDecoration:'none',color:'green'}}>&nbsp;SignIn</a></div>
               </div>
 
 </Modal>
@@ -493,7 +517,7 @@ style={customStyles}
  <i className="fas fa-female"></i>&nbsp;<input type="radio" name="gender" onChange={()=>this.handlegender('others')} required/>&nbsp;Others<br/><br/>
   <button className="btn btn-primary">submit</button>
 </form>
-<span>Dont have an account<span onClick={()=>this.handleaccount('iscreatingaccount',true)} style={{textDecoration:'none',color:'red'}}>&nbsp;Signup</span></span>
+<div>Dont have an account<a href="#" onClick={()=>this.handleaccount('iscreatingaccount',true)} style={{textDecoration:'none',color:'red'}}>&nbsp;Signup</a></div>
 </div>
 </Modal>
 
