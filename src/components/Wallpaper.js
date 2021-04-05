@@ -58,10 +58,24 @@ class Wallpaper extends React.Component{
       isfacebookuserloggedIn:false,
       image:undefined,
       googleimage:undefined,
-      restaurants:[]
+      restaurants:[],
+      getsignupdetails:[],
+      mails:undefined
       
     }
   }
+   componentDidMount()
+  {
+    sessionStorage.clear();
+    axios({
+      url:'https://immense-chamber-71560.herokuapp.com/signups',
+      method:'GET',
+      headers:{'content-Type':'application/json'}
+    }).then(res=>this.setState({getsignupdetails:res.data.signupdetails, mails:res.data.signupdetails.map((item)=>{return item.email})}))
+    .catch(error=>console.log(error))
+   
+  }
+  
     Aboutus=()=>{
         this.props.history.push('/aboutus');
     }
@@ -104,7 +118,7 @@ this.setState({[name]:value})
        handlegender=(gender)=>{
          const {email,password}=this.state;
          axios({
-    url:'https://dry-citadel-95113.herokuapp.com/login',
+    url:'https://immense-chamber-71560.herokuapp.com/login',
     method:'POST',
     headers:{'content-Type':'application/json'},
     data:
@@ -169,16 +183,16 @@ this.setState({[name]:value})
 
 
 
-        const {name,emails,passwords,genders,mobilenumber}=this.state;
-
+        const {name,emails,passwords,genders,mobilenumber,mails}=this.state;
+   const allu=mails.indexOf(emails)
         axios({
-          url:'https://dry-citadel-95113.herokuapp.com/signup',
+          url:'https://immense-chamber-71560.herokuapp.com/signup',
           method:'POST',
           headers:{'content-Type':'application/json'},
           data:
           {
           name:name,
-          email:emails,
+          email:mails[allu]!== emails ? emails : alert('User with this email address already exist'),
           password:passwords,
           gender:genders,
           mobilenumber:mobilenumber
@@ -221,7 +235,7 @@ this.setState({[state]:value})
        locationId=(event)=>{
          const location=event.target.value;
          axios({
-           url:'https://dry-citadel-95113.herokuapp.com/restaurantsfilter',
+           url:'https://immense-chamber-71560.herokuapp.com/restaurantsfilter',
            method:'POST',
            headers:{'content-Type':'application/json'},
            data:
