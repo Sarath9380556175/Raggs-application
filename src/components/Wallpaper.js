@@ -73,7 +73,6 @@ class Wallpaper extends React.Component{
       headers:{'content-Type':'application/json'}
     }).then(res=>this.setState({getsignupdetails:res.data.signupdetails, mails:res.data.signupdetails.map((item)=>{return item.email})}))
     .catch(error=>console.log(error))
-   
   }
   
     Aboutus=()=>{
@@ -326,22 +325,6 @@ this.setState({[state]:value})
       </div>
   
   :null}
-
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
 
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
