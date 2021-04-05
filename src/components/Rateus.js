@@ -35,7 +35,7 @@ class Rateus extends React.Component{
     handleSubmit=()=>{
         const {rating,quality,feedback}=this.state;
         axios({
-            url:'serene-neumann-cfc1d2.netlify.app/rateus',
+            url:'https://dry-citadel-95113.herokuapp.com/rateus',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
