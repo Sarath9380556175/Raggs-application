@@ -68,7 +68,7 @@ class Wallpaper extends React.Component{
   {
     sessionStorage.clear();
     axios({
-      url:'https://immense-chamber-71560.herokuapp.com/signups',
+      url:'https://vast-plateau-26931.herokuapp.com/signups',
       method:'GET',
       headers:{'content-Type':'application/json'}
     }).then(res=>this.setState({getsignupdetails:res.data.signupdetails, mails:res.data.signupdetails.map((item)=>{return item.email})}))
@@ -118,7 +118,7 @@ this.setState({[name]:value})
        handlegender=(gender)=>{
          const {email,password}=this.state;
          axios({
-    url:'https://immense-chamber-71560.herokuapp.com/login',
+    url:'https://vast-plateau-26931.herokuapp.com/login',
     method:'POST',
     headers:{'content-Type':'application/json'},
     data:
@@ -186,7 +186,7 @@ this.setState({[name]:value})
         const {name,emails,passwords,genders,mobilenumber,mails}=this.state;
    const allu=mails.indexOf(emails)
         axios({
-          url:'https://immense-chamber-71560.herokuapp.com/signup',
+          url:'https://vast-plateau-26931.herokuapp.com/signup',
           method:'POST',
           headers:{'content-Type':'application/json'},
           data:
@@ -235,7 +235,7 @@ this.setState({[state]:value})
        locationId=(event)=>{
          const location=event.target.value;
          axios({
-           url:'https://immense-chamber-71560.herokuapp.com/restaurantsfilter',
+           url:'https://vast-plateau-26931.herokuapp.com/restaurantsfilter',
            method:'POST',
            headers:{'content-Type':'application/json'},
            data:
