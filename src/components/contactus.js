@@ -28,7 +28,7 @@ class Contactus extends React.Component{
     handlesubmit=()=>{
         const {firstname,lastname,email,password,comment}=this.state;
         axios({
-            url:'https://immense-chamber-71560.herokuapp.com/contactus',
+            url:'https://vast-plateau-26931.herokuapp.com/contactus',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
