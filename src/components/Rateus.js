@@ -7,7 +7,7 @@ class Rateus extends React.Component{
         super();
         this.state={
             rating:{},
-            ratings:undefined,
+            rating:undefined,
             quality:undefined,
             feedback:undefined
         }
@@ -18,7 +18,7 @@ class Rateus extends React.Component{
     }
 
     handlerating=(rating)=>{
-        this.setState({ratings:rating})
+        this.setState({rating:rating})
     }
 
     handlequality=(quality)=>{
@@ -35,7 +35,7 @@ class Rateus extends React.Component{
     handleSubmit=()=>{
         const {rating,quality,feedback}=this.state;
         axios({
-            url:'https://dry-citadel-95113.herokuapp.com/rateus',
+            url:'http://localhost:8080/rateus',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
@@ -64,46 +64,46 @@ class Rateus extends React.Component{
 </div>
                  <form  onSubmit={this.handleSubmit}>
                      <br/>
-    <div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic'}}>1. please rate the quality of Food<br/><br/>
+    <div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic',fontFamily:'cursive'}}>1. please rate the quality of Food<br/><br/>
     
 	<input type="radio" name="audio" onChange={()=>this.handlequality('Excellent')} required/>&nbsp;
     Excellent
   </div>
 
-  <div style={{color:'darkslateblue',fontStyle:'italic'}}>
+  <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="b" onChange={()=>this.handlequality('Good')} required/>&nbsp;
     Good
    </div>
 
-    <div style={{color:'darkslateblue',fontStyle:'italic'}}>
+    <div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 	<input type="radio" name="audio" value="a" onChange={()=>this.handlequality('Average')} required/>&nbsp;
     Average
  </div>
 
 
-<div style={{color:'darkslateblue',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 <input type="radio" name="audio" onChange={()=>this.handlequality('Bad')} required/>&nbsp;
    Bad
 
 </div>
 <br/>
 
-<div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic'}}>2. please rate the quality of Restaurant<br/><br/>
+<div style={{color:'darkslateblue',fontSize:'15px',fontStyle:'italic',fontFamily:'cursive'}}>2. please rate the quality of Restaurant<br/><br/>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Excellent')} required/>&nbsp;
    Excellent
 </div>
 
-<div style={{color:'darkslateblue',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Good')} required/>&nbsp;
    Good
 </div>
 
-<div style={{color:'darkslateblue',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Average')} required/>&nbsp;
    Average
 </div>
 
-<div style={{color:'darkslateblue',fontStyle:'italic'}}>
+<div style={{color:'darkslateblue',fontFamily:'cursive',fontStyle:'italic'}}>
 	<input type="radio" name="radio" onChange={()=>this.handlerating('Bad')} required/>&nbsp;
     Bad
 </div>
