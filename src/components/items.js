@@ -41,7 +41,7 @@ class Items extends React.Component{
         console.log(price)
 
         axios({
-            url:'https://dry-citadel-95113.herokuapp.com/itemslist',
+            url:'https://immense-chamber-71560.herokuapp.com/itemslist',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
@@ -142,7 +142,7 @@ post = (details) => {
 }
 
 getData = (data) => {
-    return fetch(`https://dry-citadel-95113.herokuapp.com/payment`, {
+    return fetch(`https://immense-chamber-71560.herokuapp.com/payment`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -166,7 +166,7 @@ makePayment = (e) => {
 
     const {name,password,mobilenumber,gender}=this.state;
     axios({
-        url:'https://dry-citadel-95113.herokuapp.com/paymentform',
+        url:'https://immense-chamber-71560.herokuapp.com/paymentform',
         method:'POST',
         headers:{'content-Type':'application/json'},
         data:
