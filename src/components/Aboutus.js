@@ -15,7 +15,7 @@ class Aboutus extends React.Component{
     componentDidMount()
     {
         axios({
-            url:'https://dry-citadel-95113.herokuapp.com/aboutus',
+            url:'https://immense-chamber-71560.herokuapp.com/aboutus',
             method:'get',
             headers:{'content-Type':'application/json'}
         })
@@ -25,7 +25,7 @@ class Aboutus extends React.Component{
 
 
 axios({
-    url:'https://dry-citadel-95113.herokuapp.com/aboutusdetails',
+    url:'https://immense-chamber-71560.herokuapp.com/aboutusdetails',
     method:'get',
     headers:{'content-Type':'application/json'}
 })
