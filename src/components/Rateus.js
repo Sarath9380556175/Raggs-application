@@ -41,8 +41,8 @@ class Rateus extends React.Component{
             data:
             {
                 Restaurant:String(rating),
-                FoodQuality:quality,
-                feedback:feedback
+                FoodQuality:String(quality),
+                feedback:String(feedback)
                 
 
             }
