@@ -142,7 +142,7 @@ post = (details) => {
 }
 
 getData = (data) => {
-    return fetch(`https://immense-chamber-71560.herokuapp.com/payment`, {
+    return fetch(`https://vast-plateau-26931.herokuapp.com/payment`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -166,7 +166,7 @@ makePayment = (e) => {
 
     const {name,password,mobilenumber,gender}=this.state;
     axios({
-        url:'https://immense-chamber-71560.herokuapp.com/paymentform',
+        url:'https://vast-plateau-26931.herokuapp.com/paymentform',
         method:'POST',
         headers:{'content-Type':'application/json'},
         data:
