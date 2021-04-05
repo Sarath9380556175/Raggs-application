@@ -64,7 +64,7 @@ class Wallpaper extends React.Component{
       
     }
   }
-   componentDidMount()
+  componentDidMount()
   {
     sessionStorage.clear();
     axios({
@@ -73,6 +73,7 @@ class Wallpaper extends React.Component{
       headers:{'content-Type':'application/json'}
     }).then(res=>this.setState({getsignupdetails:res.data.signupdetails, mails:res.data.signupdetails.map((item)=>{return item.email})}))
     .catch(error=>console.log(error))
+   
   }
   
     Aboutus=()=>{
@@ -178,30 +179,40 @@ this.setState({[name]:value})
       
        }
 
-       handlesubmit=()=>{
+        handlesubmit=()=>{
 
 
 
-        const {name,emails,passwords,genders,mobilenumber,mails}=this.state;
-   const allu=mails.indexOf(emails)
+        const {name,emails,passwords,genders,mobilenumber,getsignupdetails,mails}=this.state;
+        console.log(mails)
+        const allu=mails.indexOf(emails)
+     const mailing=queryString.parse(mails)
+     console.log(mailing)
         axios({
+          
           url:'https://vast-plateau-26931.herokuapp.com/signup',
           method:'POST',
           headers:{'content-Type':'application/json'},
+         
           data:
           {
           name:name,
           email:mails[allu]!== emails ? emails : alert('User with this email address already exist'),
           password:passwords,
-          gender:genders,
-          mobilenumber:mobilenumber
+          mobilenumber:mobilenumber,
+          gender:genders
           }
+        
         })
         .then(res=>this.setState({signupdetails:res.data.signup}))
 
         .catch(error=>console.log(error))
 
+       
+        
        }
+
+
 
 
        userlogin=(state,value)=>{
