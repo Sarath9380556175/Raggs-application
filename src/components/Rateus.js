@@ -6,7 +6,7 @@ class Rateus extends React.Component{
     {
         super();
         this.state={
-            rating:{},
+            ratings:{},
             rating:undefined,
             quality:undefined,
             feedback:undefined
@@ -47,7 +47,7 @@ class Rateus extends React.Component{
 
             }
         })
-        .then(res=>this.setState({rating:res.data.rateus}))
+        .then(res=>this.setState({ratings:res.data.rateus}))
         .catch(err=>console.log(err));
 
         this.props.history.push('/thankyou')
