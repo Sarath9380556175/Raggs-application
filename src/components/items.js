@@ -41,7 +41,7 @@ class Items extends React.Component{
         console.log(price)
 
         axios({
-            url:'https://immense-chamber-71560.herokuapp.com/itemslist',
+            url:'https://vast-plateau-26931.herokuapp.com/itemslist',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
