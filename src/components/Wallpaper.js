@@ -214,13 +214,13 @@ this.setState({[name]:value})
           mobilenumber:mobilenumber,
           gender:genders
           }
-         this.props.history.push('/thankyou')
+       
         })
         .then(res=>this.setState({signupdetails:res.data.signup}))
 
         .catch(error=>console.log(error))
 
-       
+         this.props.history.push('/thankyou')
         
        }
 
