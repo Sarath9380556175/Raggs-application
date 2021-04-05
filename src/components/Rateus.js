@@ -40,7 +40,7 @@ class Rateus extends React.Component{
             headers:{'content-Type':'application/json'},
             data:
             {
-                Restaurant:rating,
+                Restaurant:String(rating),
                 FoodQuality:quality,
                 feedback:feedback
                 
