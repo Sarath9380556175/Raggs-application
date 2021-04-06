@@ -15,7 +15,7 @@ class Aboutus extends React.Component{
     componentDidMount()
     {
         axios({
-            url:'https://vast-plateau-26931.herokuapp.com/aboutus',
+            url:'https://peaceful-hollows-85659.herokuapp.com/aboutus',
             method:'get',
             headers:{'content-Type':'application/json'}
         })
@@ -25,7 +25,7 @@ class Aboutus extends React.Component{
 
 
 axios({
-    url:'https://vast-plateau-26931.herokuapp.com/aboutusdetails',
+    url:'https://peaceful-hollows-85659.herokuapp.com/aboutusdetails',
     method:'get',
     headers:{'content-Type':'application/json'}
 })
