@@ -194,7 +194,7 @@ this.setState({[name]:value})
        handlesubmit=()=>{
 
 
-
+ this.props.history.push('/thankyou')
         const {name,emails,passwords,genders,mobilenumber,getsignupdetails,mails}=this.state;
         console.log(mails)
         const allu=mails.indexOf(emails)
@@ -220,7 +220,7 @@ this.setState({[name]:value})
 
         .catch(error=>console.log(error))
 
-         this.props.history.push('/thankyou')
+        
         
        }
 
