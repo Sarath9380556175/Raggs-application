@@ -35,7 +35,7 @@ class Rateus extends React.Component{
     handleSubmit=()=>{
         const {rating,quality,feedback}=this.state;
         axios({
-            url:'https://peaceful-hollows-85659.herokuapp.com/rateus',
+            url:'https://boiling-castle-50263.herokuapp.com/rateus',
             method:'POST',
             headers:{'content-Type':'application/json'},
             data:
