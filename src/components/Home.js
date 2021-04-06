@@ -16,7 +16,7 @@ class Home extends React.Component{
  {
    sessionStorage.clear();
    axios({
-     url:'https://vast-plateau-26931.herokuapp.com/locations',
+     url:'https://peaceful-hollows-85659.herokuapp.com/locations',
      method:'GET',
      headers:{'content-Type':'application/json'}
    })
@@ -26,7 +26,7 @@ class Home extends React.Component{
 
 
    axios({
-     url:'https://vast-plateau-26931.herokuapp.com/quicksearches',
+     url:'https://peaceful-hollows-85659.herokuapp.com/quicksearches',
      method:'GET',
      headers:{'content-Type':'application/json'}
    }).then(res=>this.setState({quicksearches:res.data.quicksearch}))
