@@ -71,7 +71,7 @@ class Wallpaper extends React.Component{
   {
     sessionStorage.clear();
     axios({
-      url:'https://vast-plateau-26931.herokuapp.com/signups',
+      url:'https://peaceful-hollows-85659.herokuapp.com/signups',
       method:'GET',
       headers:{'content-Type':'application/json'}
     }).then(res=>this.setState({getsignupdetails:res.data.signupdetails, mails:res.data.signupdetails.map((item)=>{return item.email})}))
@@ -125,7 +125,7 @@ this.setState({[name]:value})
          const mailing=queryString.parse(mails)
          console.log(mailing)
          axios({
-    url:'https://vast-plateau-26931.herokuapp.com/login',
+    url:'https://peaceful-hollows-85659.herokuapp.com/login',
     method:'POST',
     headers:{'content-Type':'application/json'},
     data:
@@ -202,7 +202,7 @@ this.setState({[name]:value})
      console.log(mailing)
         axios({
           
-          url:'https://vast-plateau-26931.herokuapp.com/signup',
+          url:'https://peaceful-hollows-85659.herokuapp.com/signup',
           method:'POST',
           headers:{'content-Type':'application/json'},
          
@@ -252,7 +252,7 @@ this.setState({[state]:value})
        locationId=(event)=>{
          const location=event.target.value;
          axios({
-           url:'https://vast-plateau-26931.herokuapp.com/restaurantsfilter',
+           url:'https://peaceful-hollows-85659.herokuapp.com/restaurantsfilter',
            method:'POST',
            headers:{'content-Type':'application/json'},
            data:
