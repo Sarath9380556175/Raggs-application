@@ -19,7 +19,7 @@ componentDidMount()
   const mealtype=qs.restaurant;
   
     axios({
-        url:'https://peaceful-hollows-85659.herokuapp.com/restaurantsfilter',
+        url:'https://boiling-castle-50263.herokuapp.com/restaurantsfilter',
         method:'POST',
         headers:{'content-Type':'application/json'},
         data:
