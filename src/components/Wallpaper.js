@@ -218,7 +218,7 @@ this.setState({[name]:value})
 
         .catch(error=>console.log(error))
 
-        this.props.history.push('/thankyou')
+     
         
        }
 
